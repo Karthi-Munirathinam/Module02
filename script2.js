@@ -23,7 +23,7 @@ request.onload = function(){
     });
     //data.currencies[1]:
     var RemCountries = data.filter(function rem(element){
-        return element.currencies.length > 1 ;
+        return element.currencies.length > 1 && element.currencies[0].code !== 'USD' ;
     });
     var RemUSD = RemCountries.filter(function rem(element){
         return element.currencies[1].code === 'USD';
