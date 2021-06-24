@@ -11,15 +11,14 @@ request.send();
 
 //Receiving the data
 request.onload = function(){
+
     //All countries data
     var data = JSON.parse(this.response);
     // console.log(data);
+
     //All countries data with population less than 2 lacs
-    var populationLessThanTwoLacs = data.filter(function population(element){
-        return element.population < 200000;
-    }).map(function names(element){
-        return element.name;
-    });
+    var populationLessThanTwoLacs = data.filter((element) => element.population < 200000).map((element) => element.name);
+    
     console.log(`Countries with population less than two lacs:::`);
     console.log(populationLessThanTwoLacs);
 }
